@@ -14,14 +14,14 @@ export default function PostComponent(params: {
         <AvatarComponent avatar="http://github.com/cauesilva1.png" style="w-12 h-12 rounded-full"/>
 
         <div className="flex flex-col">
-          <span className="text-lg font-bold">Name obs</span>
-          <span className="transform -translate-y-2">subname</span>
+          <span className="text-lg font-bold">{params.name}</span>
+          <span className="transform -translate-y-2">{params.subname}</span>
         </div>
       </div>
 
       <div className="flex flex-col items-center ">
 
-        <h1 className="text-2xl font-bold max-[780px]:text-lg">Title</h1>
+        <h1 className="text-2xl font-bold max-[780px]:text-lg">{params.title}</h1>
 
         <span className="text-sm  p-3 bg-slate-900/40 rounded-b-lg rounded-lg max-[780px]:text-xs">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias ex hic, iure veniam, reiciendis alias ab veritatis incidunt harum consectetur numquam, suscipit porro adipisci ipsum? Deleniti minima id labore maxime.</span>
 

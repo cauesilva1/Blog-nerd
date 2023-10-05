@@ -7,6 +7,7 @@ import Link from "next/link";
 export default function Login() {
   return (
     <main className="flex w-screen h-screen min-h-screen min-w-screen flex-col items-center justify-center bg-gradient-to-tl from-gray-700 via-gray-900 to-black">
+      <ButtonComponent ContentButton='Voltar' Link='/' style="bg-[#656565] hover:bg-[#3a3a3a] transition-colors duration-250 py-2 px-10 rounded-lg absolute top-14 left-10 max-[780px]:left-2 max-[820px]:top-4" />
       <div className="flex flex-col w-[826px] h-3/4 max-[780px]:w-64 max-[780px]:h-4/5 justify-between items-center bg-[#272727] rounded-xl transition-all duration-50">
 
         <Text style={{marginTop: '2rem', fontSize: '40px', color: 'white', width: '100%', display: 'flex', justifyContent: 'center' }}> Login</Text>    
