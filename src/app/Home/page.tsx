@@ -12,7 +12,9 @@ export default function Home() {
 
         <ScrollArea className="flex items-center flex-col w-[826px] h-[90%] max-[780px]:w-4/5 max-[780px]:h-4/5 bg-white transition-all duration-50 rounded-3xl mt-3">
 
-          <PostComponent />
+          <PostComponent name="Caue" subname="Silva" title="Blog Nerd"/>
+
+          <PostComponent name="jose" subname="santos" title="sobre games"/>
 
         </ScrollArea>
       </main>
