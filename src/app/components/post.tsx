@@ -11,7 +11,7 @@ export default function PostComponent(params: {
   return (
     <div className="flex items-center flex-col w-full h-48 max-[780px]:h-60 px-4 py-2 text-black border border-black/30 rounded-3xl mb-2">
       <div className="flex flex-wrap gap-3 w-full h-14 ">
-        <AvatarComponent avatar="http://github.com/cauesilva1.png" />
+        <AvatarComponent avatar="http://github.com/cauesilva1.png" style="w-12 h-12 rounded-full"/>
 
         <div className="flex flex-col">
           <span className="text-lg font-bold">Name obs</span>
