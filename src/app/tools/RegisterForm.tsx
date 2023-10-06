@@ -3,8 +3,8 @@
 import InputComponent from "../components/input";
 import { Text } from '@radix-ui/themes';
 import '@radix-ui/themes/styles.css';
-import ButtonComponent from "../components/button";
 import Link from "next/link";
+import { Button } from "../components/Button";
 
 export default function RegisterForm(){
 
@@ -44,21 +44,9 @@ export default function RegisterForm(){
 
         <div className="flex mb-10">
 
-            {/* <button className="flex flex-col items-center font-bold text-white mt-2 "
-            type="button"
-            onClick={handleSubmit}
-            >
-                teste
-            </button> */}
-
-        <ButtonComponent
-
-        onClick={handleSubmit}
-        
-        ContentButton='Register' 
-        Link='#' 
-        style="bg-[#656565] hover:bg-[#3a3a3a] transition-colors duration-250 py-2 px-10 rounded-lg"/>
-
+        <Button.Root  href="Login">
+        <Button.Content>Register</Button.Content>
+        </Button.Root>
         </div>
 
       </div>
