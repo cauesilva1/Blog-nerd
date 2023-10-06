@@ -1,16 +1,15 @@
-import Link from "next/link"
+import Link, { LinkProps } from "next/link";
 
-export default function ButtonComponent(params: {
-    Link: string,
-    ContentButton: string,
-    style: string
-}) {
-    return (
-    <Link href={params.Link}
-        className={params.style}>
-            
-        { params.ContentButton}
+interface ButtonProps extends Omit<LinkProps, "href"> {
+  Link: string;
+  ContentButton: string;
+  style: string;
+}
 
+export default function ButtonComponent(params: ButtonProps) {
+  return (
+    <Link href={params.Link} className={params.style}>
+      {params.ContentButton}
     </Link>
-    )
+  );
 }

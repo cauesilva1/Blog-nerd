@@ -10,7 +10,7 @@ export default function Home() {
 
       <Header logo="Blog Nerd" user="Caue Silva" avatar="http://github.com/cauesilva1.png" />
 
-        <ScrollArea className="flex items-center flex-col w-[826px] h-[90%] max-[780px]:w-4/5 max-[780px]:h-4/5 bg-white transition-all duration-50 rounded-3xl mt-3">
+        <ScrollArea className="flex items-center flex-col w-[826px] h-[90%] max-[780px]:w-4/5 max-[780px]:h-4/5 bg-[#272727] transition-all duration-50 rounded-3xl mt-3">
 
           <PostComponent name="Caue" subname="Silva" title="Blog Nerd"/>
 
