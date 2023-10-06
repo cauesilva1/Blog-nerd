@@ -2,7 +2,7 @@ import React from "react";
 import Header from "../components/header";
 
 import InputComponent from "../components/input";
-import ButtonComponent from "../components/button";
+import { Button } from "../components/Button";
 
 export default function createPost() {
   return (
@@ -11,7 +11,9 @@ export default function createPost() {
 
       <Header logo="Blog Nerd" user="Caue Silva" avatar="http://github.com/cauesilva1.png"/>
 
-      <ButtonComponent ContentButton='Voltar' Link='/Home' style="bg-[#656565] hover:bg-[#3a3a3a] transition-colors duration-250 py-2 px-10 rounded-lg absolute top-16 left-4" />
+      <Button.Root href="Home" className="absolute top-16 left-10 max-[780px]:left-2 max-[780px]:top-4">
+          <Button.Content>Voltar</Button.Content>
+        </Button.Root>
 
         <div className="flex items-center justify-between flex-col w-[826px] h-[80%] max-[780px]:w-4/5 max-[780px]:h-[79%] bg-[#272727] transition-all duration-50 rounded-3xl mt-10 max-[780px]:mt-16 max-[780px]:justify-center max-[780px]:gap-20">
 
@@ -32,16 +34,17 @@ export default function createPost() {
 
         <div className="flex flex-col ">
         <p className="text-10 font-bold text-white justify-start">Content:</p>
-        <textarea placeholder="write your subname.." className="h-44 p-2 rounded-lg bg-[#707070] border-black border"/>
+        <textarea placeholder="write post.." className="h-44 p-2 rounded-lg bg-[#707070] border-black border"/>
         </div>
 
 
         </div>
 
         </div>
-
-       
-        <ButtonComponent ContentButton='Save profile' Link='#' style="bg-[#656565] hover:bg-[#3a3a3a] transition-colors duration-250 py-2 px-10 rounded-lg mb-4"/>
+        
+        <Button.Root href="#" className="mb-2">
+          <Button.Content>Save profile</Button.Content>
+        </Button.Root>
 
         </div>
       </main>

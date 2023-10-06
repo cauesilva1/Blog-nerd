@@ -1,8 +1,8 @@
 import { Text } from '@radix-ui/themes';
 import '@radix-ui/themes/styles.css';
 import Separator from './components/separetor';
-import ButtonComponent from './components/button';
 import Header from './components/header';
+import { Button } from './components/Button';
 
 
 export default function Home() {
@@ -24,9 +24,15 @@ export default function Home() {
 
         <div className=' w-3/4  flex items-center justify-center gap-96 mt-12 mb-10 max-[780px]:flex-col max-[780px]:gap-2 '>
 
-        <ButtonComponent ContentButton='Login' Link='/Login' style='bg-[#656565] hover:bg-[#3a3a3a] transition-colors duration-250 py-2 px-10 rounded-lg'/>
+        
+        <Button.Root href="Login">
+          <Button.Content>Login</Button.Content>
+        </Button.Root>
 
-        <ButtonComponent ContentButton='Register' Link='/Register'  style='bg-[#656565] hover:bg-[#3a3a3a] transition-colors duration-250 py-2 px-10 rounded-lg'/>
+        <Button.Root href="Register">
+          <Button.Content>Register</Button.Content>
+        </Button.Root>
+
 
         
         </div>

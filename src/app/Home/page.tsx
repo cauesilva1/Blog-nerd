@@ -1,7 +1,8 @@
 import React from "react";
-import PostComponent from "../components/post";
+import  { Post } from "../components/post";
 import { ScrollArea } from "@radix-ui/themes";
 import Header from "../components/header";
+import { Button } from "../components/Button";
 
 export default function Home() {
   return (
@@ -10,11 +11,67 @@ export default function Home() {
 
       <Header logo="Blog Nerd" user="Caue Silva" avatar="http://github.com/cauesilva1.png" />
 
-        <ScrollArea className="flex items-center flex-col w-[826px] h-[90%] max-[780px]:w-4/5 max-[780px]:h-4/5 bg-white transition-all duration-50 rounded-3xl mt-3">
+      <Button.Root href="createpost" className="absolute top-16 left-10 max-[780px]:left-2 max-[780px]:top-4">
+          <Button.Content>Criar post</Button.Content>
+        </Button.Root>
 
-          <PostComponent name="Caue" subname="Silva" title="Blog Nerd"/>
+        <ScrollArea className="flex items-center flex-col w-[826px] h-[90%] max-[780px]:w-4/5 max-[780px]:h-4/5 bg-[#272727] transition-all duration-50 rounded-md mt-2 ">
 
-          <PostComponent name="jose" subname="santos" title="sobre games"/>
+        <Post.root>
+          <Post.infoUser>
+          <Post.avatar avatar="http://github.com/cauesilva1.png"/>
+          <Post.user name="Caue " subname="Silva"/>
+          </Post.infoUser>
+          <Post.content title="Sobre games"/>
+          <Post.button />
+        </Post.root>
+
+        <Post.root>
+          <Post.infoUser>
+          <Post.avatar avatar="http://github.com/cauesilva1.png"/>
+          <Post.user name="Caue " subname="Silva"/>
+          </Post.infoUser>
+          <Post.content title="Sobre games"/>
+          <Post.button />
+        </Post.root>
+
+        <Post.root>
+          <Post.infoUser>
+          <Post.avatar avatar="http://github.com/cauesilva1.png"/>
+          <Post.user name="Caue " subname="Silva"/>
+          </Post.infoUser>
+          <Post.content title="Sobre games"/>
+          <Post.button />
+        </Post.root>
+
+        <Post.root>
+          <Post.infoUser>
+          <Post.avatar avatar="http://github.com/cauesilva1.png"/>
+          <Post.user name="Caue " subname="Silva"/>
+          </Post.infoUser>
+          <Post.content title="Sobre games"/>
+          <Post.button />
+        </Post.root>
+
+        <Post.root>
+          <Post.infoUser>
+          <Post.avatar avatar="http://github.com/cauesilva1.png"/>
+          <Post.user name="Caue " subname="Silva"/>
+          </Post.infoUser>
+          <Post.content title="Sobre games"/>
+          <Post.button />
+        </Post.root>
+
+        <Post.root>
+          <Post.infoUser>
+          <Post.avatar avatar="http://github.com/cauesilva1.png"/>
+          <Post.user name="Caue " subname="Silva"/>
+          </Post.infoUser>
+          <Post.content title="Sobre games"/>
+          <Post.button />
+        </Post.root>
+
+        
 
         </ScrollArea>
       </main>
