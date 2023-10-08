@@ -7,7 +7,7 @@ interface postRootprops {
 export default function postRoot({ children }: postRootprops) {
   return(
 
-    <div className="flex items-center flex-col w-full gap-1 max-[780px]:h-60 px-4 py-2  text-black border border-black/30 rounded-3xl mb-2 bg-[#9b9b9ba2] mt-2">
+    <div className="flex justify-start items-start flex-col gap-1 w-[50%] max-[780px]:w-[80%] m-auto  px-4 py-4  text-black border border-black/30 rounded-3xl mb-2 bg-[#1B1E21] mt- line-clamp-1">
 
     {children}
 

@@ -8,7 +8,7 @@ export default function postAvatar( {avatar}: AvatarProps) {
     return(
  
             
-        <AvatarComponent avatar={avatar} style="w-12 h-12 rounded-full"/>
+        <AvatarComponent avatar={avatar} style="w-[40px] h-[40px] rounded-full"/>
 
         
 
