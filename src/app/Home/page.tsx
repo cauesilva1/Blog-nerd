@@ -2,78 +2,37 @@ import React from "react";
 import  { Post } from "../components/post";
 import { ScrollArea } from "@radix-ui/themes";
 import Header from "../components/header";
-import { Button } from "../components/Button";
+import TopBarPost from "../components/topBarPost";
+import Separator from "../components/separetor";
 
 export default function Home() {
   return (
     <>
-      <main className="flex w-screen h-screen min-h-screen min-w-screen flex-col items-center  bg-gradient-to-tl from-gray-700 via-gray-900 to-black ">
+      <main className="flex w-screen h-screen min-h-screen min-w-screen flex-col items-center bg-[#121517] ">
 
       <Header logo="Blog Nerd" user="Caue Silva" avatar="http://github.com/cauesilva1.png" />
 
-      <Button.Root href="createpost" className="absolute top-16 left-10 max-[780px]:left-2 max-[780px]:top-4">
-          <Button.Content>Criar post</Button.Content>
-        </Button.Root>
+        <TopBarPost />
 
-        <ScrollArea className="flex items-center flex-col w-[826px] h-[90%] max-[780px]:w-4/5 max-[780px]:h-4/5 bg-[#272727] transition-all duration-50 rounded-md mt-2 ">
+        <Separator />
 
-        <Post.root>
-          <Post.infoUser>
-          <Post.avatar avatar="http://github.com/cauesilva1.png"/>
-          <Post.user name="Caue " subname="Silva"/>
-          </Post.infoUser>
-          <Post.content title="Sobre games"/>
-          <Post.button />
-        </Post.root>
+        <div className=" h-[80%] flex  items-center justify-center w-full ">
+        
+        <ScrollArea className="flex items-center justify-center max-[780px]:w-4/5 max-[780px]:h-4/5 mt-4 ">
 
         <Post.root>
           <Post.infoUser>
           <Post.avatar avatar="http://github.com/cauesilva1.png"/>
-          <Post.user name="Caue " subname="Silva"/>
+          <Post.user name="Caue Silva" time="12:00"/>
           </Post.infoUser>
-          <Post.content title="Sobre games"/>
-          <Post.button />
-        </Post.root>
-
-        <Post.root>
-          <Post.infoUser>
-          <Post.avatar avatar="http://github.com/cauesilva1.png"/>
-          <Post.user name="Caue " subname="Silva"/>
-          </Post.infoUser>
-          <Post.content title="Sobre games"/>
-          <Post.button />
-        </Post.root>
-
-        <Post.root>
-          <Post.infoUser>
-          <Post.avatar avatar="http://github.com/cauesilva1.png"/>
-          <Post.user name="Caue " subname="Silva"/>
-          </Post.infoUser>
-          <Post.content title="Sobre games"/>
-          <Post.button />
-        </Post.root>
-
-        <Post.root>
-          <Post.infoUser>
-          <Post.avatar avatar="http://github.com/cauesilva1.png"/>
-          <Post.user name="Caue " subname="Silva"/>
-          </Post.infoUser>
-          <Post.content title="Sobre games"/>
-          <Post.button />
-        </Post.root>
-
-        <Post.root>
-          <Post.infoUser>
-          <Post.avatar avatar="http://github.com/cauesilva1.png"/>
-          <Post.user name="Caue " subname="Silva"/>
-          </Post.infoUser>
-          <Post.content title="Sobre games"/>
-          <Post.button />
+          <Post.tag title="Games"/>
+          <Post.content />
         </Post.root>
 
         
-
         </ScrollArea>
+
+        </div>
       </main>
     </>
   );
