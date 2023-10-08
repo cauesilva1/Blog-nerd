@@ -3,6 +3,7 @@ import '@radix-ui/themes/styles.css';
 import Separator from './components/separetor';
 import Header from './components/header';
 import { Button } from './components/Button';
+import InputComponent from './components/input';
 
 
 export default function Home() {
@@ -22,7 +23,7 @@ export default function Home() {
 
 
 
-        <div className=' w-3/4  flex items-center justify-center gap-96 mt-12 mb-10 max-[780px]:flex-col max-[780px]:gap-2 '>
+        <div className=' w-3/4  flex items-center justify-center gap-80 mt-12 mb-10 max-[780px]:flex-col max-[780px]:gap-2 '>
 
         
         <Button.Root href="Login">

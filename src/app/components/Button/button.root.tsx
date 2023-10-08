@@ -13,14 +13,14 @@ export const ButtonRoot: React.FC<ButtonRootProps> = ({
 
   // absolute top-14 left-10 max-[780px]:left-2 max-[780px]:top-4
   const className = twMerge(
-    "bg-[#656565] hover:bg-[#3a3a3a] transition-colors duration-250 py-2 px-10 rounded-lg",
+    "bg-[#656565] hover:bg-[#3a3a3a] transition-colors duration-250 py-2 px-10 rounded-lg flex flex-row gap-2 items-center",
     props.className
   );
   
   return (
-    <div className={className}>
+    <div >
       {href ? (
-        <Link href={href} className="flex flex-row gap-2 items-center">
+        <Link href={href} className={className}>
           {children}
         </Link>
       ) : (

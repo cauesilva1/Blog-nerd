@@ -3,7 +3,7 @@ import Header from "../components/header";
 import AvatarComponent from "../components/avatar";
 import InputComponent from "../components/input";
 import { Button } from "../components/Button";
-import { BiArrowToLeft } from "react-icons/bi";
+import { IoIosArrowBack } from "react-icons/io";
 
 export default function profile() {
   return (
@@ -15,7 +15,8 @@ export default function profile() {
           avatar="http://github.com/cauesilva1.png"
         />
 
-        <Button.Root href="Home" className="absolute top-16 left-10 max-[780px]:left-2 max-[780px]:top-4">
+        <Button.Root href="Home" className="absolute top-16 left-10 max-[780px]:left-2 max-[780px]:top-4 bg-[#246CD8] hover:bg-[#77adff]/40 hover:transition-all hover:duration-[0.2s]">
+        <IoIosArrowBack />
           <Button.Content>Voltar</Button.Content>
         </Button.Root>
 

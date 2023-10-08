@@ -4,6 +4,7 @@ import postUser from "./post.user";
 import postContent from "./post.content";
 import PostButton from "./post.button";
 import PostInfoUser from "./post.infoUser";
+import PostTag from "./post.tag";
 
 export const Post ={
     root: postRoot,
@@ -11,5 +12,6 @@ export const Post ={
     avatar: postAvatar,
     user: postUser,
     content: postContent,
-    button: PostButton
+    button: PostButton,
+    tag: PostTag
 }
