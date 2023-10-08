@@ -16,7 +16,7 @@ export default function Home() {
 
         <Separator />
 
-        <div className=" h-[80%] flex  items-center justify-center w-full ">
+        <div className=" h-[70%] flex  items-center justify-center w-full ">
         
         <ScrollArea className="flex items-center justify-center max-[780px]:w-4/5 max-[780px]:h-4/5 mt-4 ">
 
@@ -26,7 +26,7 @@ export default function Home() {
           <Post.user name="Caue Silva" time="12:00"/>
           </Post.infoUser>
           <Post.tag title="Games"/>
-          <Post.content />
+          <Post.content  openSeePost/>
         </Post.root>
 
         
