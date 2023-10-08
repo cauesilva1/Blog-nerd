@@ -5,7 +5,8 @@ import postContent from "./post.content";
 import PostButton from "./post.button";
 import PostInfoUser from "./post.infoUser";
 import PostTag from "./post.tag";
-import PostComent from "./post.coments";
+import PostCreateComent from "./post.coments";
+import PostComent from "./post.coment";
 
 
 export const Post ={
@@ -16,5 +17,6 @@ export const Post ={
     content: postContent,
     button: PostButton,
     tag: PostTag,
+    createComent: PostCreateComent,
     Comment: PostComent
 }

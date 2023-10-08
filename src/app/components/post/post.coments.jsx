@@ -1,6 +1,4 @@
-import InputComponent from "../input";
-
-export default function PostComent( ) {
+export default function PostCreateComent( ) {
 
 
   return (

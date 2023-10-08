@@ -1,21 +1,22 @@
 "use client"
 
 import React, { useEffect, useState } from "react";
-import { Dialog , Flex, TextField, Text, ScrollArea} from "@radix-ui/themes";
+import { Dialog , Flex, ScrollArea, Separator } from "@radix-ui/themes";
 import "@radix-ui/themes/styles.css";
 import { Post } from "./post";
 
 
 export default function SeePost({seeMore}) {
-//   const [isClient, setIsClient] = useState(false);
 
-//   useEffect(() => {
-//     setIsClient(true);
-//   }, []);
+  const [isClient, setIsClient] = useState(false);
 
-//   if (!isClient) {
-//     return null; // Renderize nada no servidor
-//   }
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  if (!isClient) {
+    return null; // Renderize nada no servidor
+  }
 
   return (
 
@@ -28,13 +29,13 @@ export default function SeePost({seeMore}) {
       </Dialog.Trigger>
 
 
-      <Dialog.Content style={{backgroundColor: "#121517", color: "white" }}>
+      <Dialog.Content style={{backgroundColor: "#1B1E21", color: "white", scrollbarWidth: "none"}}>
         <Post.infoUser>
           <Post.avatar avatar="http://github.com/cauesilva1.png"/>
           <Post.user name="Caue Silva" time="12:00" />
           </Post.infoUser>
 
-        <Dialog.Description size="2" mb="4" >
+        <Dialog.Description size="2" mb="4"  className="w-[12%] max-[780px]:w-[70px] text-center">
           <Post.tag title="Games" />
         </Dialog.Description>
 
@@ -46,6 +47,25 @@ export default function SeePost({seeMore}) {
 
         <ScrollArea direction="column" gap="2">
 
+          <Post.createComent />
+
+        </ScrollArea>
+
+        <Separator color="orange" size="4" mt="4" mb="3" className="opacity-70"/>
+
+        <ScrollArea direction="column"
+          size="1"
+          type="always"
+          scrollbars="vertical"
+          style={{ width: "100%", height: 250 }}>
+
+          <Post.Comment />
+          <Post.Comment />
+          <Post.Comment />
+          <Post.Comment />
+          <Post.Comment />
+          <Post.Comment />
+          <Post.Comment />
           <Post.Comment />
 
         </ScrollArea>

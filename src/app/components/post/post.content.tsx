@@ -1,5 +1,6 @@
 import SeePost from "../SeePost";
 
+
 interface PostContentProps {
   content?: string;
   openSeePost?: boolean;
@@ -18,7 +19,7 @@ export default function postContent({ content, openSeePost }: PostContentProps) 
         labore maxime.
 
 
-        <SeePost seeMore={openSeePost}/>
+        <SeePost seeMore={openSeePost} />
 
       </span>
     </div>
