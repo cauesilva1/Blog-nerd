@@ -6,6 +6,7 @@ import "@radix-ui/themes/styles.css";
 import Link from "next/link";
 import { Button } from "../components/Button";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from "axios";
@@ -13,6 +14,7 @@ import axios from "axios";
 export default function LoginForm() {
   const [user, setUser] = useState("");
   const [password, setPassword] = useState("");
+  const router = useRouter();
 
   async function handleSubmit() {
     if (user === "" || password === "") {
@@ -25,9 +27,15 @@ export default function LoginForm() {
           password: password,
         });
   
-        console.log(response.data);
+        console.log(response.data)
   
         toast.success("Login efetuado com sucesso");
+
+        if (response.status === 200) {
+          localStorage.setItem('user', JSON.stringify(response.data));
+          toast.success("Login efetuado com sucesso");
+          router.push("/Home");
+        }
         
       } catch (error) {
 

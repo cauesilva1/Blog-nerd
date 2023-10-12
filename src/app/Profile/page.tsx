@@ -1,11 +1,75 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useState } from "react";
 import Header from "../components/header";
 import AvatarComponent from "../components/avatar";
 import InputComponent from "../components/input";
 import { Button } from "../components/Button";
 import { IoIosArrowBack } from "react-icons/io";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { useRouter } from "next/navigation";
+import axios from "axios";
+
 
 export default function profile() {
+  const router = useRouter();
+
+  const [user, setUser] = useState("");
+  const [email, setEmail] = useState("");
+
+  useEffect(() => {
+    // Busque as informações do usuário do Local Storage
+    const storedUser = localStorage.getItem('user');
+
+    if (storedUser) {
+      // Se houver informações do usuário no Local Storage, interprete o usuário como logado
+      const parsedUser = JSON.parse(storedUser);
+      console.log(parsedUser);
+      setUser(parsedUser.user.user);
+      setEmail(parsedUser.user.email);
+    }
+  }, []);
+
+  function handleCleatStorage() {
+    toast.success("Logout efetuado com sucesso");
+    localStorage.clear();
+    setTimeout(() => {
+      router.push("/");
+    }, 2000);
+  }
+
+  async function handlePutUser() {
+
+    const storedUser = localStorage.getItem('user');
+
+    if (storedUser) {
+
+      const parsedUser = JSON.parse(storedUser);
+
+      const id = parsedUser.user.id;
+
+      console.log(user, email, id);
+
+          try {
+              const response = await axios.post("http://localhost:3333/putUsser", {
+                id, 
+                user,
+                email,
+              });
+
+              console.log(response.data.user);
+
+              toast.success("Dados atualizados com sucesso");
+              const useratualizado = response.data.user;
+              localStorage.setItem('user', JSON.stringify(useratualizado));
+          } catch (error) {
+              console.error(error);
+          }
+    }
+
+  }
+
   return (
     <>
       <main className="flex w-screen h-screen min-h-screen min-w-screen flex-col items-center  bg-gradient-to-tl from-gray-700 via-gray-900 to-black ">
@@ -14,6 +78,11 @@ export default function profile() {
           user="Caue Silva"
           avatar="http://github.com/cauesilva1.png"
         />
+
+        <ToastContainer
+                    theme="dark"
+                    autoClose={2000}
+                />
 
         <Button.Root href="Home" className="absolute top-16 left-10 max-[780px]:left-2 max-[780px]:top-4 bg-[#246CD8] hover:bg-[#77adff]/40 hover:transition-all hover:duration-[0.2s]">
         <IoIosArrowBack />
@@ -39,19 +108,10 @@ export default function profile() {
                   Name:
                 </p>
                 <InputComponent
+                  value={user}
+                  onChange={(e) => setUser(e.target.value)}
                   type="text"
                   placeholder="write your name.."
-                  className="p-2 rounded-lg bg-[#707070] border-black border"
-                />
-              </div>
-
-              <div className="flex flex-col ">
-                <p className="text-10 font-bold text-white justify-start">
-                  Subname:
-                </p>
-                <InputComponent
-                  type="text"
-                  placeholder="write your subname.."
                   className="p-2 rounded-lg bg-[#707070] border-black border"
                 />
               </div>
@@ -61,7 +121,9 @@ export default function profile() {
                   Email:
                 </p>
                 <InputComponent
-                  type="password"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  type="text"
                   placeholder="write your email.."
                   className="p-2 rounded-lg bg-[#707070] border-black border"
                 />
@@ -69,11 +131,16 @@ export default function profile() {
             </div>
           </div>
 
-          <Button.Root href="#" className="mt-6">
+          <div className="flex flex-row  justify-between w-full px-24 mt-14 ">
+          <Button.Root className="mt-6" onClick={() => handlePutUser()}>
           <Button.Content>Save profile</Button.Content>
-        </Button.Root>
+          </Button.Root>
 
-         
+          <Button.Root  className="mt-6 bg-red-600 hover:bg-red-400" onClick={() => handleCleatStorage()}>
+          <Button.Content>Logout</Button.Content>
+          </Button.Root>
+
+          </div>
         </div>
       </main>
     </>
