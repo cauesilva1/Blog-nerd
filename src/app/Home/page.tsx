@@ -1,12 +1,11 @@
-"use client";
-
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Post } from "../components/post";
 import { ScrollArea } from "@radix-ui/themes";
 import Header from "../components/header";
 import TopBarPost from "../components/topBarPost";
 import Separator from "../components/separetor";
 import axios from "axios";
+import { cookies } from 'next/headers'
 
 interface Post {
   id: number;
@@ -17,38 +16,41 @@ interface Post {
   content: string;
 }
 
-export default function Home() {
-  const [posts, setPosts] = useState([]);
-  const [name, setName] = useState("");
+export  default async function Home() {
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        
-        const response = await axios.get("http://localhost:3333/posts");
-        const data = response.data;
-        setPosts(data);
-      } catch (error) {
-        console.error("Erro na solicitação:", error);
-      }
-    };
+   async function fetchData() {
 
-    const user = localStorage.getItem('user')
-    if (user) {
-      const parsedUser = JSON.parse(user)
-      const name = parsedUser.user
-      setName(name)
+    try { 
+      const response = await axios.get("http://localhost:3333/posts");
+      const data = response.data;
+
+      return data as Post[];
+
+    } catch (error) {
+      console.error("Erro na solicitação:", error);
+      return [];
+    }
+
+  };
+
+  const posts = await fetchData();
+
+  function getUserName() {
+  const auth = cookies().get('user')?.value
+    if (auth) {
+      const parsedUser = JSON.parse(auth.split(" ")[0])
+       return parsedUser.user
     } 
+  }
+  const Username = getUserName()
 
-    fetchData(); // Chame a função assíncrona
-  }, []);
 
   return (
     <>
       <main className="flex w-screen h-screen min-h-screen min-w-screen flex-col items-center bg-[#121517] ">
         <Header
           logo="Blog Nerd"
-          user={name}
+          user={Username}
           avatar="http://github.com/cauesilva1.png"
         />
 
@@ -58,6 +60,8 @@ export default function Home() {
 
         <div className=" h-[70%] flex  items-center justify-center w-full ">
           <ScrollArea className="flex items-center justify-center max-[780px]:w-4/5 max-[780px]:h-4/5 mt-4 ">
+
+
             {posts.map((post: Post) => (
               <Post.root key={post.id}>
                 <Post.infoUser>
@@ -69,6 +73,8 @@ export default function Home() {
               </Post.root>
             ))}
           </ScrollArea>
+
+
         </div>
       </main>
     </>

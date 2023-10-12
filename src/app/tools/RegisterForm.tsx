@@ -34,7 +34,7 @@ export default function RegisterForm() {
         setLoading(true);
         const response = await axios.post("http://localhost:3333/users", {
           user: user,
-          password: password  ,
+          password: password,
           email: email,
         });
 

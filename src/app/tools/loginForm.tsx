@@ -1,5 +1,4 @@
 "use client";
-
 import InputComponent from "../components/input";
 import { Text } from "@radix-ui/themes";
 import "@radix-ui/themes/styles.css";
@@ -27,12 +26,14 @@ export default function LoginForm() {
           password: password,
         });
   
-        console.log(response.data)
+        console.log(response)
   
         toast.success("Login efetuado com sucesso");
 
         if (response.status === 200) {
-          localStorage.setItem('user', JSON.stringify(response.data));
+
+          document.cookie = `user=${JSON.stringify(response.data.user)} path=/`;
+
           toast.success("Login efetuado com sucesso");
           router.push("/Home");
         }

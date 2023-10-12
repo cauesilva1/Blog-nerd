@@ -1,31 +1,13 @@
-"use client";
-
 import { Text } from '@radix-ui/themes';
 import '@radix-ui/themes/styles.css';
 import Separator from './components/separetor';
 import Header from './components/header';
 import { Button } from './components/Button';
-import React, { useState, useEffect } from 'react';
-import { useRouter } from "next/navigation";
+import React from 'react';
 
 
 
 export default function Home() {
-  const [user, setUser] = useState(null);
-  const router = useRouter();
-
-
-  useEffect(() => {
-    const storedUser = localStorage.getItem('user');
-
-    if (storedUser) {
-      // Se houver informações do usuário no Local Storage, interprete o usuário como logado
-      const parsedUser = JSON.parse(storedUser);
-      setUser(parsedUser);
-      router.push("/Home");
-    }
-  }, []);
-
 
   return (
     <main className="flex w-screen h-screen min-h-screen min-w-screen flex-col items-center  bg-gradient-to-tl from-gray-700 via-gray-900 to-black">
