@@ -24,7 +24,7 @@ export const ButtonRoot: React.FC<ButtonRootProps> = ({
           {children}
         </Link>
       ) : (
-        <button onClick={onClick} className="flex flex-row gap-2 items-center">
+        <button onClick={onClick} className={className}>
           {children}
         </button>
       )}

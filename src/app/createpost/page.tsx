@@ -5,7 +5,9 @@ import InputComponent from "../components/input";
 import { Button } from "../components/Button";
 import { IoIosArrowBack } from "react-icons/io";
 
+
 export default function createPost() {
+
   return (
     <>
       <main className="flex w-screen h-screen min-h-screen min-w-screen flex-col items-center  bg-gradient-to-tl from-gray-700 via-gray-900 to-black ">
@@ -16,7 +18,7 @@ export default function createPost() {
         />
 
         <Button.Root
-          href="Login"
+          href="Home"
           className="absolute top-20 left-10 max-[780px]:left-2 max-[780px]:top-4 bg-[#246CD8] hover:bg-[#77adff]/40 hover:transition-all hover:duration-[0.2s]"
         >
           <IoIosArrowBack />
@@ -30,7 +32,10 @@ export default function createPost() {
           </div>
 
           <div className="flex flex-col items-center  w-full max-[780px]:w-44 transition-all duration-50 ">
-            <div className="flex flex-col mb-22 gap-8 max-[780px]:gap-10 w-3/4 max-[780px]:w-72 transition-all duration-50 ">
+              <div className="flex flex-col mb-22 gap-8 max-[780px]:gap-10 w-3/4 max-[780px]:w-72 transition-all duration-50 ">
+              
+              
+              
               <div className="flex flex-col ">
                 <p className="text-10 font-bold text-white justify-start">
                   Title:

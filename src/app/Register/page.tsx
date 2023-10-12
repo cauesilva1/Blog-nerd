@@ -14,6 +14,7 @@ export default function Register() {
         <IoIosArrowBack />
         <Button.Content>VOLTAR</Button.Content>
       </Button.Root>
+      
 
       <RegisterForm />
 
