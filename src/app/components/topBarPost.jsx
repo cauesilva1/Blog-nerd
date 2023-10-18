@@ -21,7 +21,7 @@ export default function TopBarPost() {
                     className={activeTab === "myposts" ? "text-[#246CD8]" : ""}
                     onClick={() => setActiveTab("myposts")}
                 >
-                    My Post's
+                    My Post&apos;s
                 </button>
             </div>
 

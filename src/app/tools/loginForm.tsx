@@ -87,7 +87,7 @@ export default function LoginForm() {
               href="/Register"
               className="text-sm font-bold text-blue-700 justify-start mt-2 max-[780px]:text-center"
             >
-              I don't have an account? click here
+              I don&apos;t have an account? click here
             </Link>
           </div>
         </div>
