@@ -22,7 +22,7 @@ export default function LoginForm() {
       return;
     } else {
       try {
-        const response = await axios.post("http://localhost:3333/login", {
+        const response = await axios.post("https://backend-blognerd.onrender.com/login", {
           user: user,
           password: password,
         });

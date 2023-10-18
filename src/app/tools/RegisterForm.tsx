@@ -32,7 +32,7 @@ export default function RegisterForm() {
     } else {
       try {
         setLoading(true);
-        const response = await axios.post("http://localhost:3333/users", {
+        const response = await axios.post("https://backend-blognerd.onrender.com/users", {
           user: user,
           password: password,
           email: email,

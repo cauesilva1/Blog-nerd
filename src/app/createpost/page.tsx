@@ -28,7 +28,7 @@ export default function createPost() {
      if (title === "" || content === "") {
         toast.error("Preencha todos os campos")
       }else{
-        const response = await axios.post("http://localhost:3333/coments", {
+        const response = await axios.post("https://backend-blognerd.onrender.com/coments", {
           id,
           title,
         content

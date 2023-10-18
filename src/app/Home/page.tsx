@@ -21,7 +21,7 @@ export  default async function Home() {
    async function fetchData() {
 
     try { 
-      const response = await axios.get("http://localhost:3333/posts");
+      const response = await axios.get("https://backend-blognerd.onrender.com/posts");
       const data = response.data;
 
       return data as Post[];

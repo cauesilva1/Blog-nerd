@@ -50,7 +50,7 @@ export default function profile() {
       const id = parsedUser.user.id;
 
       try {
-        const response = await axios.post("http://localhost:3333/putUsser", {
+        const response = await axios.post("https://backend-blognerd.onrender.com/putUsser", {
           id,
           user,
           email,
