@@ -10,17 +10,21 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import { cookiesProfile, clearCookies } from "./cookiesProfile";
-import { Flex, Popover, TextArea, Text, Checkbox, Box } from "@radix-ui/themes";
-import '@radix-ui/themes/styles.css';
+import { useRouter } from "next/navigation";
 
 export default function profile() {
   const [user, setUser] = useState("");
   const [email, setEmail] = useState("");
   const [newAvatar, setNewAvatar] = useState("");
+  const router = useRouter();
 
   useEffect(() => {
     async function fetchcookies() {
       const userData = await cookiesProfile();
+
+      if(!userData) {
+        return;
+      }
       setUser(userData.user);
       setEmail(userData.email);
     }
@@ -31,6 +35,10 @@ export default function profile() {
   function handleCleatcookies() {
     toast.success("Logout efetuado com sucesso");
     clearCookies();
+
+    setTimeout(() => {  
+          router.push("/");
+        }, 2000);
   }
 
   async function handlePutUser() {

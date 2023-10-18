@@ -86,7 +86,7 @@ export default function RegisterForm() {
         Register
       </Text>
 
-      <div className="flex flex-col mb-22 gap-14 w-3/4 max-[780px]:w-[300px] transition-all duration-50">
+      <div className="flex flex-col mb-22 gap-4 w-3/4 max-[780px]:w-[300px] transition-all duration-50">
        
         <div className="flex flex-col ">
           <p className="text-10 font-bold text-white justify-start">User:</p>

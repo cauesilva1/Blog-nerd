@@ -16,7 +16,8 @@ export default function LoginForm() {
   const router = useRouter();
 
   async function handleSubmit() {
-    if (user === "" || password === "") {
+
+    if (user === " " || password === " ") {
       toast.error("Preencha todos os campos");
       return;
     } else {
@@ -25,10 +26,6 @@ export default function LoginForm() {
           user: user,
           password: password,
         });
-  
-        console.log(response)
-  
-        toast.success("Login efetuado com sucesso");
 
         if (response.status === 200) {
 

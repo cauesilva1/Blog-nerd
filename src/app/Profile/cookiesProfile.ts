@@ -1,7 +1,7 @@
 "use server"
 
-import { redirect } from "next/navigation";
 import { cookies } from "next/headers";
+import { log } from "console";
 
  export async function cookiesProfile() {
     const auth = cookies().get('user')?.value
@@ -17,10 +17,9 @@ import { cookies } from "next/headers";
 
 
 export async function clearCookies() {
-    cookies().delete('user')
 
-    setTimeout(() => {
-        redirect("/");
-      }, 2000);
+    cookies().delete('user')
+    console.log("Logout efetuado com sucesso");
+
 
 }
