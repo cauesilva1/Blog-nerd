@@ -13,7 +13,7 @@ import { createPostUser } from "./createPost";
 
 
 
-export default function createPost() {
+export default function CreatePost() {
   const [ title, setTitle ] = useState("")
   const [ content, setContent ] = useState("")
   const router = useRouter();
