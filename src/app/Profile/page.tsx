@@ -12,7 +12,8 @@ import axios from "axios";
 import { cookiesProfile, clearCookies } from "./cookiesProfile";
 import { useRouter } from "next/navigation";
 
-export default function profile() {
+
+export default function Profile() {
   const [user, setUser] = useState("");
   const [email, setEmail] = useState("");
   const [newAvatar, setNewAvatar] = useState("");
