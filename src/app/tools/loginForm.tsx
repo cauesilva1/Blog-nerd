@@ -1,5 +1,4 @@
 "use client";
-
 import InputComponent from "../components/input";
 import { Text } from "@radix-ui/themes";
 import "@radix-ui/themes/styles.css";
@@ -17,22 +16,21 @@ export default function LoginForm() {
   const router = useRouter();
 
   async function handleSubmit() {
-    if (user === "" || password === "") {
+
+    if (user === " " || password === " ") {
       toast.error("Preencha todos os campos");
       return;
     } else {
       try {
-        const response = await axios.post("http://localhost:3333/login", {
+        const response = await axios.post("https://backend-blognerd.onrender.com/login", {
           user: user,
           password: password,
         });
-  
-        console.log(response.data)
-  
-        toast.success("Login efetuado com sucesso");
 
         if (response.status === 200) {
-          localStorage.setItem('user', JSON.stringify(response.data));
+
+          document.cookie = `user=${JSON.stringify(response.data.user)} path=/`;
+
           toast.success("Login efetuado com sucesso");
           router.push("/Home");
         }

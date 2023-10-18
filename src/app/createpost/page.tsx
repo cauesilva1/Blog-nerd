@@ -9,6 +9,7 @@ import { IoIosArrowBack } from "react-icons/io";
 import { toast } from "react-toastify";
 import axios from "axios";
 import { useRouter } from "next/navigation";
+import { createPostUser } from "./createPost";
 
 
 
@@ -18,34 +19,24 @@ export default function createPost() {
   const router = useRouter();
 
 
-  async function createPost() {
+  async function createPosts() {
+
+    const user = await createPostUser()
+
+    const id = user.id
     
-
-     const user = localStorage.getItem('user')
-
-
-     if (user) {
-      const parsedUser = JSON.parse(user)
-      const id = parsedUser.id
-
-      if (title === "" || content === "") {
+     if (title === "" || content === "") {
         toast.error("Preencha todos os campos")
       }else{
-        const response = await axios.post("http://localhost:3333/coments", {
+        const response = await axios.post("https://backend-blognerd.onrender.com/coments", {
           id,
           title,
         content
         })
-        console.log(response.data)
         setTimeout(() => {
           router.push("/Home");
         }, 3000);
       }
-    }
-
- 
-
-    
   }
 
 
@@ -104,7 +95,7 @@ export default function createPost() {
             </div>
           </div>
 
-          <Button.Root className="mb-2" onClick={() => createPost()}>
+          <Button.Root className="mb-2" onClick={() => createPosts()}>
             <Button.Content>Create Post</Button.Content>
           </Button.Root>
         </div>
