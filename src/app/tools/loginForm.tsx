@@ -27,6 +27,7 @@ export default function LoginForm() {
           password: password,
         });
 
+
         if (response.status === 200) {
 
           document.cookie = `user=${JSON.stringify(response.data.user)} path=/`;

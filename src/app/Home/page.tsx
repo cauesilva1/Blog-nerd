@@ -10,10 +10,12 @@ import { cookies } from 'next/headers'
 interface Post {
   id: number;
   user: {
+    photo: string;
     user: string;
   };
   title: string;
   content: string;
+  timestamp: string;
 }
 
 export  default async function Home() {
@@ -23,6 +25,7 @@ export  default async function Home() {
     try { 
       const response = await axios.get("https://backend-blognerd.onrender.com/posts");
       const data = response.data;
+
 
       return data as Post[];
 
@@ -44,6 +47,30 @@ export  default async function Home() {
   }
   const Username = getUserName()
 
+  function getPhotoFromCookie() {
+    const auth = cookies().get('user')?.value;
+    if (auth) {
+      const parsedUser = JSON.parse(auth.split(" ")[0]);
+      return parsedUser.photo; 
+    }
+  
+    return "github"; // Valor padrão se o cookie não existir
+  }
+
+  const photo = getPhotoFromCookie();
+
+  
+
+  function formatTime(timestamp: string): string {
+    const date = new Date(timestamp);
+    return `${date.getHours()}:${padZero(date.getMinutes())}`;
+  }
+  
+  function padZero(value: number): string {
+    return value < 10 ? `0${value}` : `${value}`;
+  }
+  
+
 
   return (
     <>
@@ -51,7 +78,7 @@ export  default async function Home() {
         <Header
           logo="Blog Nerd"
           user={Username}
-          avatar="http://github.com/cauesilva1.png"
+          avatar={`http://github.com/${photo}.png`}
         />
 
         <TopBarPost />
@@ -65,8 +92,8 @@ export  default async function Home() {
             {posts.map((post: Post) => (
               <Post.root key={post.id}>
                 <Post.infoUser>
-                  <Post.avatar avatar="http://github.com/cauesilva1.png" />
-                  <Post.user name={post.user.user} time="12:00" />
+                  <Post.avatar avatar={photo ? `http://github.com/${post.user.photo}.png` : 'http://github.com/github.png'} />
+                  <Post.user name={post.user.user} time={formatTime(post.timestamp)}  />
                 </Post.infoUser>
                 <Post.tag title={post.title} />
                 <Post.content openSeePost content={post.content} contentSeeMore={post.content} title={post.title} name={post.user.user} />

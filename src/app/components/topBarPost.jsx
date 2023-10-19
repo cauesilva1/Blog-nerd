@@ -5,7 +5,7 @@ import { IoMdAdd } from "react-icons/io";
 import { Button } from "../components/Button";
 
 export default function TopBarPost() {
-    const [activeTab, setActiveTab] = useState("feed"); // Inicialmente, definimos a guia "Feed" como ativa
+    const [activeTab, setActiveTab] = useState("feed");
 
     return (
         <div className="flex items-center justify-between w-[50%] mt-6 mb-3 max-[780px]:w-full max-[780px]:px-4">
@@ -16,13 +16,13 @@ export default function TopBarPost() {
                 >
                     Feed
                 </button>
-
+{/* 
                 <button
                     className={activeTab === "myposts" ? "text-[#246CD8]" : ""}
                     onClick={() => setActiveTab("myposts")}
                 >
                     My Post&apos;s
-                </button>
+                </button> */}
             </div>
 
             <Button.Root href="createpost" className="  bg-[#246CD8]">

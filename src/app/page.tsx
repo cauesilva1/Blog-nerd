@@ -21,7 +21,7 @@ export default function Home() {
         <Separator />
 
 
-        <h3 className='mt-2 mb-2 text-[40px] text-white w-4/5 flex justify-center items-center text-center max-[780px]:text-base'> Aqui voçe ira encontrar a melhor comunidade nerd/dev entre agora nessa gigantesca comunidade!.</h3>
+        <h3 className='mt-2 mb-2 text-[40px] text-white w-4/5 flex justify-center items-center text-center max-[780px]:text-base'> Aqui voce ira encontrar a melhor comunidade nerd/dev.</h3>
 
 
 

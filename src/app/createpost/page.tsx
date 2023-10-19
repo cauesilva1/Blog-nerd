@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../components/header";
 
 import InputComponent from "../components/input";
@@ -10,13 +10,30 @@ import { toast } from "react-toastify";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import { createPostUser } from "./createPost";
+import { cookiesProfile } from "../Profile/cookiesProfile";
 
 
 
 export default function CreatePost() {
   const [ title, setTitle ] = useState("")
   const [ content, setContent ] = useState("")
+  const [photo, setPhoto] = useState("");
   const router = useRouter();
+
+  useEffect(() => {
+    async function fetchcookies() {
+      const userData = await cookiesProfile();
+
+
+      if (!userData) {
+        return;
+      }
+      const userPhoto = userData.photo;
+      setPhoto(userPhoto);
+    }
+
+    fetchcookies();
+  }, []);
 
 
   async function createPosts() {
@@ -46,7 +63,7 @@ export default function CreatePost() {
         <Header
           logo="Blog Nerd"
           user="Caue Silva"
-          avatar="http://github.com/cauesilva1.png"
+          avatar={photo ? `http://github.com/${photo}.png` : 'http://github.com/github.png'}
         />
 
         <Button.Root

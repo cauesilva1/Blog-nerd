@@ -8,7 +8,7 @@ export default function Header(params: { logo?: string; user?: string, avatar?: 
 
       <Link href="/Profile" className="flex items-center justify-center gap-4">
         <p>{params.user}</p>
-        {params.avatar && <AvatarComponent avatar={params.avatar} style="w-[36px] h-[36px] rounded-full "/>}
+        {params.avatar && <AvatarComponent avatar={params.avatar} width={36} height={36} style=" rounded-full "/>}
       </Link >
     </div>
   );

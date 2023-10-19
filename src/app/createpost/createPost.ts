@@ -8,7 +8,6 @@ export async function createPostUser() {
 
     if (auth) {
         const parsedUser = JSON.parse(auth.split(" ")[0]);
-        console.log(parsedUser);
         return parsedUser
     }
     
