@@ -68,7 +68,7 @@ export default function CreatePost() {
 
         <Button.Root
           href="Home"
-          className="absolute top-20 left-10 max-[780px]:left-2 max-[780px]:top-4 bg-[#246CD8] hover:bg-[#77adff]/40 hover:transition-all hover:duration-[0.2s]"
+          className="absolute top-20 left-10 max-[780px]:left-2 max-[780px]:top-10 bg-[#246CD8] hover:bg-[#77adff]/40 hover:transition-all hover:duration-[0.2s]"
         >
           <IoIosArrowBack />
 
@@ -81,7 +81,7 @@ export default function CreatePost() {
           </div>
 
           <div className="flex flex-col items-center  w-full max-[780px]:w-44 transition-all duration-50 ">
-              <div className="flex flex-col mb-22 gap-8 max-[780px]:gap-10 w-3/4 max-[780px]:w-72 transition-all duration-50 ">
+              <div className="flex flex-col mb-22 gap-8 max-[780px]:gap-4 w-3/4 max-[780px]:w-72 transition-all duration-50 ">
               
               
               
