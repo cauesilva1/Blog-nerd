@@ -3,7 +3,8 @@ import AvatarComponent from "./avatar";
 
 export default function Header(params: { logo?: string; user?: string, avatar?: string }) {
   return (
-    <div className="flex items-center justify-between w-full h-14 bg-[#212529] px-28 py-4">
+    <div className="flex items-center justify-between w-full h-14 bg-[#212529] px-28 py-4  max-[780px]:flex max-[780px]:items-center max-[780px]:justify-between max-[780px]:px-10 ">
+
       <p>{params.logo}</p>
 
       <Link href="/Profile" className="flex items-center justify-center gap-4">

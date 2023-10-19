@@ -68,14 +68,14 @@ export default function CreatePost() {
 
         <Button.Root
           href="Home"
-          className="absolute top-20 left-10 max-[780px]:left-2 max-[780px]:top-10 bg-[#246CD8] hover:bg-[#77adff]/40 hover:transition-all hover:duration-[0.2s]"
+          className="absolute top-20 left-10 max-[780px]:left-2 max-[780px]:top-16 bg-[#246CD8] hover:bg-[#77adff]/40 hover:transition-all hover:duration-[0.2s]"
         >
           <IoIosArrowBack />
 
           <Button.Content>Voltar</Button.Content>
         </Button.Root>
 
-        <div className="flex items-center justify-between flex-col w-[826px] h-[80%] max-[780px]:w-4/5 max-[780px]:h-[79%] bg-[#272727] transition-all duration-50 rounded-3xl mt-10 max-[780px]:mt-16 max-[780px]:justify-center max-[780px]:gap-20">
+        <div className="flex items-center justify-between flex-col w-[826px] h-[80%] max-[780px]:w-4/5 max-[780px]:h-[79%] bg-[#272727] transition-all duration-50 rounded-3xl mt-10 max-[780px]:mt-16 max-[780px]:justify-center max-[780px]:gap-14">
           <div className="flex flex-col items-center mt-3">
             <h1 className="text-4xl font-bold text-white">Create post</h1>
           </div>

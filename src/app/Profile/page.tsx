@@ -90,7 +90,7 @@ export default function Profile() {
 
         <Button.Root
           href="Home"
-          className="absolute top-16 left-10 max-[780px]:left-2 max-[780px]:top-10 bg-[#246CD8] hover:bg-[#77adff]/40 hover:transition-all hover:duration-[0.2s]"
+          className="absolute top-16 left-10 max-[780px]:left-2 max-[780px]:top-16 bg-[#246CD8] hover:bg-[#77adff]/40 hover:transition-all hover:duration-[0.2s]"
         >
           <IoIosArrowBack />
           <Button.Content>Voltar</Button.Content>
@@ -183,7 +183,7 @@ export default function Profile() {
             </div>
           </div>
 
-          <div className="flex flex-row  justify-between w-full px-24 mt-14 ">
+          <div className="flex flex-row justify-between w-full px-24 mt-14 max-[780px]:flex-col max-[780px]:justify-center max-[780px]:items-center">
             <Button.Root className="mt-6" onClick={() => handlePutUser()}>
               <Button.Content>Save profile</Button.Content>
             </Button.Root>
