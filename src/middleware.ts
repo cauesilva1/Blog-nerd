@@ -1,22 +1,31 @@
-import { NextResponse } from 'next/server'
-import type { NextRequest } from 'next/server'
- 
+import { NextRequest, NextResponse } from "next/server"
+
 export function middleware(request: NextRequest) {
-  
-    const userCookieValue = request.cookies.get("user")?.value;
+  const path = request.nextUrl.pathname
 
-   if(userCookieValue === undefined) {
+  const isPublicPath =  path === '/' || path === '/Login' || path === '/Register'
 
-    NextResponse.redirect(new URL('/', request.url));
+  const token = request.cookies.get('auth_token')?.value || ''
 
-   } else {
+  if(isPublicPath && token) {
+    return NextResponse.redirect(new URL('/Homepage', request.nextUrl))
+  }
 
-     NextResponse.redirect(new URL('/Home', request.url)); 
+  if (!isPublicPath && !token) {
+    return NextResponse.redirect(new URL('/', request.nextUrl))
+  }
 
-   }
-   
 }
- 
+
+
+// See "Matching Paths" below to learn more
 export const config = {
-  matcher: '/:path*',
+  matcher: [
+    '/',
+    '/Homepage',
+    '/Login',
+    '/Register',
+    '/createpost',
+    '/Profile'
+  ]
 }

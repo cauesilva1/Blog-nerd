@@ -18,7 +18,7 @@ interface Post {
   timestamp: string;
 }
 
-export  default async function Home() {
+export  default async function HomePage() {
 
    async function fetchData() {
 

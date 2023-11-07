@@ -21,8 +21,9 @@ export default function LoginForm() {
       toast.error("Preencha todos os campos");
       return;
     } else {
+      console.log(user, password);
       try {
-        const response = await axios.post("https://backendblognerd.bohr.io/login", {
+        const response = await axios.post("https://backend-blognerd.onrender.com/login", {
           user: user,
           password: password,
         });

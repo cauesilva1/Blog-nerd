@@ -51,7 +51,7 @@ export default function CreatePost() {
         content
         })
         setTimeout(() => {
-          router.push("/Home");
+          router.push("/Homepage");
         }, 3000);
       }
   }
@@ -67,7 +67,7 @@ export default function CreatePost() {
         />
 
         <Button.Root
-          href="Home"
+          href="Homepage"
           className="absolute top-20 left-10 max-[780px]:left-2 max-[780px]:top-16 bg-[#246CD8] hover:bg-[#77adff]/40 hover:transition-all hover:duration-[0.2s]"
         >
           <IoIosArrowBack />
