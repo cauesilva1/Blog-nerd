@@ -22,11 +22,10 @@ export default function LoginForm() {
       return;
     } else {
       try {
-        const response = await axios.post("https://backend-blognerd.onrender.com/login", {
+        const response = await axios.post("https://backendblognerd.bohr.io/login", {
           user: user,
           password: password,
         });
-
 
         if (response.status === 200) {
 

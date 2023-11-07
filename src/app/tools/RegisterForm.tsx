@@ -21,7 +21,7 @@ export default function RegisterForm() {
 
   const router = useRouter();
 
-  async function createRegister() {
+  async function createRegister() { 
 
     if (user === "" || password === "" || confirmPassword === "" || email === "") {
       toast.error("Preencha todos os campos");
