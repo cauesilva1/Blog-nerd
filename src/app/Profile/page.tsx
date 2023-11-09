@@ -54,7 +54,7 @@ export default function Profile() {
 
     try {
       const response = await axios.post(
-        "https://backend-blognerd.onrender.com/putUsser",
+        "https://backend-blog-nerd.vercel.app/putUsser",
         {
           id: userData.id,
           user,

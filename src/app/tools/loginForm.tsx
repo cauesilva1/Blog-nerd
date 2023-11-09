@@ -23,17 +23,17 @@ export default function LoginForm() {
     } else {
       console.log(user, password);
       try {
-        const response = await axios.post("https://backend-blognerd.onrender.com/login", {
+        const response = await axios.post("http://localhost:5000/login", {
           user: user,
           password: password,
         });
 
-        if (response.status === 200) {
-
+        if (response.status === 200) {  
+          console.log(response.data.user)
           document.cookie = `user=${JSON.stringify(response.data.user)} path=/`;
 
           toast.success("Login efetuado com sucesso");
-          router.push("/Home");
+          router.push("/Homepage");
         }
         
       } catch (error) {

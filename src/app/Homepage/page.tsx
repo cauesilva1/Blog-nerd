@@ -23,7 +23,7 @@ export  default async function HomePage() {
    async function fetchData() {
 
     try { 
-      const response = await axios.get("https://backend-blognerd.onrender.com/posts");
+      const response = await axios.get("https://backend-blog-nerd.vercel.app/posts");
       const data = response.data;
 
 

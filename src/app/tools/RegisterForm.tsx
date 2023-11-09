@@ -34,7 +34,7 @@ export default function RegisterForm() {
         setLoading(true);
         
 
-        const response = await axios.post("https://backend-blognerd.onrender.com/users", {
+        const response = await axios.post("https://backend-blog-nerd.vercel.app/user", {
           user: user,
           password: password,
           email: email,
