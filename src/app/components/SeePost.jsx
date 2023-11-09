@@ -24,7 +24,10 @@ export default function SeePost({seeMore, content, title, name}) {
 
       <Dialog.Trigger>
 
-        { seeMore && <button className="text-[#246CD8] ml-2" >abrir Post..</button>}
+        {/* { seeMore 
+        && 
+        <button className="text-[#246CD8] ml-2" >abrir Post..</button>
+        } */}
 
       </Dialog.Trigger>
 
