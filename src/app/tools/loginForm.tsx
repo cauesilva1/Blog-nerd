@@ -23,7 +23,7 @@ export default function LoginForm() {
     } else {
       console.log(user, password);
       try {
-        const response = await axios.post("http://localhost:5000/login", {
+        const response = await axios.post("https://backend-blog-nerd.vercel.app/login", {
           user: user,
           password: password,
         });
